@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Tetris</title>
+</head>
+<body style="text-align: center;margin:0;padding: 0">
+<div style="display: flex;justify-content:center;margin: 3px auto;">
+    <canvas id="next" width="160" height="160" style="background: #FDFFDF;border: 5px solid #EAEAEA"></canvas>
+    <div id="info" style="width: 50%;">
+        <p>
+            当前成绩：<span id="score" style="font-size: x-large"></span>分
+            <button onclick="this.style.display='none';start()">开始</button>
+            <button id="pause" onclick="pause()" style="display: none">暂停</button>
+            <button id="resume" onclick="resume()" style="display: none">恢复</button>
+        </p>
+        <p style="font-size: smaller">
+            左:左移,右:右移,上:变形,下:加速 <br>
+            移动端请滑动控制<br>
+            pc端请使用上下左右按键
+        </p>
+    </div>
+</div>
+<div style="margin: 3px auto;">
+    <canvas id="canvas" width="400" height="520" style="background: lightcyan;border: 5px solid #EAEAEA"></canvas>
+</div>
+<div id="mask" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;display:none;opacity:1;background: gray;">
+    <div style="position: absolute;left: 50%;top: 50%;transform: translateX(-50%) translateY(-50%);">
+        <canvas id="result" width="400" height="520" style="background: lightcyan;border: 5px solid #EAEAEA;display: none;"></canvas>
+        <div id="mes"></div>
+        <button onclick="start()">重新开始</button>
+    </div>
+</div>
+<script src="js/matrix.js"></script>
+<script src="js/tetris.js"></script>
+</body>
+</html>
